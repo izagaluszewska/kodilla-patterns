@@ -42,4 +42,14 @@ public class TaskFactoryTestSuite {
         Assert.assertEquals("I am driving to Gdansk, Grunwaldzka by car", drivingTask.executeTask());
         Assert.assertEquals(true, drivingTask.isTaskExecuted());
     }
+
+    @Test
+    public void testFactoryNoTask() {
+        //Given
+        TaskFactory taskFactory = new TaskFactory();
+        //When
+        Task noTask = taskFactory.chooseTask(null);
+        //Then
+        Assert.assertNull(noTask);
+    }
 }
